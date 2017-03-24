@@ -23,17 +23,17 @@ The goals / steps of this project are the following:
 
 
 ## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
+### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ---
-###Writeup / README
-####1. Writeup / README includes all the rubric points.
+### Writeup / README
+#### 1. Writeup / README includes all the rubric points.
 
 Here is a link to my [project code](https://github.com/olpotkin/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb).
 
-###Data Set Summary & Exploration
+### Data Set Summary & Exploration
 
-####1. Basic summary of the data set.
+#### 1. Basic summary of the data set.
 
 The code for this step is contained in the code cell **#2** of the IPython notebook.  
 
@@ -44,7 +44,7 @@ I used the pandas library to calculate summary statistics of the traffic signs d
 * The shape of a traffic sign image is **(32, 32, 3)**
 * The number of unique classes/labels in the data set is **43**
 
-####2. Exploratory visualization of the dataset.
+#### 2. Exploratory visualization of the dataset.
 
 The code for this step is contained in the code cell **#3** of the IPython notebook.  
 
@@ -57,9 +57,9 @@ Here is an exploratory visualization of the data set. It is a table structured i
 
 ![alt text][image1]
 
-###Design and Test a Model Architecture
+### Design and Test a Model Architecture
 
-####1. Describe how, and identify where in your code, you preprocessed the image data. What tecniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc.
+#### 1. Describe how, and identify where in your code, you preprocessed the image data. What tecniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc.
 
 The code for this step is contained in the code cell **#4** of the IPython notebook.
 
@@ -71,7 +71,7 @@ Here is an example of a traffic sign image before and after each step of preproc
 
 ![alt text][image2]
 
-####2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, identify where in your code, and provide example images of the additional data)
+#### 2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, identify where in your code, and provide example images of the additional data)
 
 The code for splitting the data into training and validation sets is contained in the code cell **#1** of the IPython notebook.  
 
@@ -84,7 +84,7 @@ The code cell **#4** of the IPython notebook contains the code for augmenting th
 * 10 degree rotation counterclock-wise
 * Zoom (ratio = 1.25)
 
-####3. Final model architecture.
+#### 3. Final model architecture.
 
 The code for my final model is located in the code cell **#6** of the ipython notebook. 
 
@@ -110,7 +110,7 @@ My final model consisted of the following layers:
 |						|													|
 
 
-####4. Describe how, and identify where in your code, you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+#### 4. Describe how, and identify where in your code, you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 The code for training the model is located in the code cells **#5**, **#8** of the ipython notebook. 
 
@@ -122,7 +122,7 @@ To train the model, I used the follow global parameters:
 * Optimizer - Adam algorithm (alternative of stochastic gradient descent). Optimizer uses backpropagation to update the network and minimize training loss.
 * Dropout = 0.75 (for training set only)
 
-####5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. 
+#### 5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. 
 
 The code for calculating the accuracy of the model is located in the code cell **#9** of the Ipython notebook.
 
@@ -140,9 +140,9 @@ Architecture adjustments:
 * Step 2: generate augmented training data. Results for training and validation sets on epoch #10 were 0.98437 and 0.91633 that's mean overfitting again.
 * Step 3: Important design choices - **apply dropout** (A simple way to prevent neural networks from overfitting). Results for training and validation sets on epoch #10 were around 0.99237 and 0.93673 (keep_prob values were in range 0.5-0.8).
 
-###Test a Model on New Images
+### Test a Model on New Images
 
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 Here are eight German traffic signs that I found on the web:
 
@@ -168,7 +168,7 @@ Here is example of German traffic sign after preprocessing:
 
 ![alt text][image4]
 
-####2. The model's predictions on new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+#### 2. The model's predictions on new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 The code for making predictions on my final model is located in the code cells **#14**, **#15** of the Ipython notebook.
 
@@ -187,7 +187,7 @@ Here are the results of the prediction:
 
 The model was able to correctly guess 7 of the 8 traffic signs, which gives an accuracy of **87.5%**. This compares favorably to the accuracy on the test set of **92.6%**.
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 The code for making predictions on my final model is located in the cell **#16** of the Ipython notebook.
 
@@ -279,7 +279,7 @@ For the **image #8**, the model is relatively sure that this is a **Turn right a
 | .00009			    | Go straight or left      						|
 
 
-###Visualize the Neural Network's State with Test Images
+### Visualize the Neural Network's State with Test Images
 Let's have a look for 3 examples:
 
 Example 1. Convolution</b> (layer 1 after 'tf.nn.conv2d' operation)
